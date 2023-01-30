@@ -1,0 +1,171 @@
+:root
+{
+    --soft-violet: hsl(273, 75%, 66%);
+    --soft-blue: hsl(240, 73%, 65%);
+
+
+    --very-dark-desaturated-blue: hsl(238, 29%, 16%);
+    --soft-red: hsl(14, 88%, 65%);   
+    --very-dark-grayish-blue: hsl(237, 12%, 33%);
+    --dark-grayish-blue: hsl(240, 6%, 50%);
+    --light-grayish-blue: hsl(240, 5%, 91%);
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+}
+
+body 
+{
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 12px;
+    font-family: 'Kumbh Sans';
+    box-sizing: border-box;
+
+    background: linear-gradient(0, var(--soft-blue), var(--soft-violet));
+}
+
+main
+{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: 1fr;
+
+
+    width: 90%;
+    max-width: 800px;
+    background-color: white;
+
+    border-radius: 1.5rem;
+    margin-top: 150px;
+    margin-bottom: 40px;
+
+    box-shadow: 0 20px 40px hsla(238, 29%, 16%, 0.452);
+}
+
+#woman-mobile
+{
+    width: 100%;
+    text-align: center;
+
+    background-image: url(./images/bg-pattern-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: 70%;
+    background-position: center 0%;
+}
+
+#woman-mobile-img
+{
+    width: 70%;
+    position: relative;
+    top: -59%;
+}
+#woman-desktop
+{
+    width: 100%;
+    display: none;
+    align-items: center;
+    background-image: url(./images/illustration-woman-online-desktop.svg);
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: -60px;
+}
+#box-desktop
+{
+    position: relative;
+    left: -94px;
+    top: 30px;
+    
+}
+
+.content
+{
+    width: 100%;
+
+    padding: 1.5rem;
+    margin-top: -60px;
+    box-sizing: border-box;
+}
+
+.content h1 
+{
+    font-size: 2rem;
+    color: var(--very-dark-desaturated-blue);
+
+    margin-bottom: 2rem;
+    text-align: center;
+}
+
+.content-item
+{
+    width: 100%;
+
+    display: grid;
+    align-items: center;
+    grid-template-columns: 95% 5%;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid var(--light-grayish-blue);
+    margin-top: 1rem;
+}
+.content-item:hover
+{
+    cursor: pointer;
+}
+
+.content-item-title
+{
+    font-size: 14px;
+}
+
+.content-item-text
+{
+    margin-top: 0.8rem;
+    transition: 0.4s ease-in-out;
+}
+.content-item-arrow
+{
+    transition: 1s ease-in-out;
+}
+
+@media screen and (min-width: 670px) 
+{
+    main 
+    {
+        grid-template-columns: 50% 50%;
+        padding-top: 50px;
+        padding-bottom: 50px;
+        margin-top: 40px;
+    }
+    .content
+    {
+        margin-top: 0;
+    }
+    .content h1 
+    {
+        text-align: left;
+    }
+
+    #woman-mobile 
+    {
+        display: none;
+    }
+
+    #woman-desktop
+    {
+        display: grid;
+    }
+
+
+
+    .content-item:hover .content-item-title
+    {
+    color: var(--soft-red);
+    }
+}

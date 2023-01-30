@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="style.css">
+  <title>Frontend Mentor | FAQ Accordion Card</title>
+
+  
+</head>
+<body>
+  <main>
+    <div id="woman-mobile">
+      <img id="woman-mobile-img" src="./images/illustration-woman-online-mobile.svg" alt="illustration-woman-online-mobile">
+    </div>
+
+    <div id="woman-desktop">
+      <img id="box-desktop" src="./images/illustration-box-desktop.svg" alt="illustration-box-desktop">
+    </div>
+    
+    <div class="content">
+      <h1>FAQ</h1>
+
+      <div class="content-item" onclick="contentClick(0);">
+        <p class="content-item-title">How many team members can I invite?</p>       
+        <img class="content-item-arrow" src="./images/icon-arrow-down.svg" alt="">
+        <p class="content-item-text" style="display: none;">You can invite up to 5 members</p>
+      </div>
+
+      <div class="content-item" onclick="contentClick(1);">
+        <p class="content-item-title">What is the maximum file upload size?</p>       
+        <img class="content-item-arrow" src="./images/icon-arrow-down.svg" alt="">
+        <p class="content-item-text" style="display: none;">No more than 2GB. All files in your account 
+        must fit your allotted storage space.</p>
+      </div>
+
+      <div class="content-item" onclick="contentClick(2);">
+        <p class="content-item-title">How do I reset my password?</p>       
+        <img class="content-item-arrow" src="./images/icon-arrow-down.svg" alt="">
+        <p class="content-item-text" style="display: none;">At the top, tap Security. Under "Signing in
+          to Google," tap Password. You might need to sign in. Enter your new password, then tap Change Password.</p>
+      </div>
+
+      <div class="content-item" onclick="contentClick(3);">
+        <p class="content-item-title">Can I cancel my subscription?</p>       
+        <img class="content-item-arrow" src="./images/icon-arrow-down.svg" alt="">
+        <p class="content-item-text" style="display: none;">Can you cancel subscriptions?
+          On your Android device, go to your subscriptions in Google Play. Select the subscription 
+          you want to cancel. Tap Cancel subscription.</p>
+      </div>
+
+      <div class="content-item" onclick="contentClick(4);">
+        <p class="content-item-title">Do you provide additional support?</p>       
+        <img class="content-item-arrow" src="./images/icon-arrow-down.svg" alt="">
+        <p class="content-item-text" style="display: none;">If your child needs additional help to make progress 
+          in school, your child's teachers will make an individualised plan for support for your child.</p>
+      </div>
+    </div>
+  </main>
+
+  <script>
+    var itemTitle = document.getElementsByClassName("content-item-title");
+    var itemArrow = document.getElementsByClassName("content-item-arrow");
+    var itemText = document.getElementsByClassName("content-item-text");
+    
+    function contentClick(itemID)
+    {
+      if(itemText[itemID].style.display == "none")
+      { // if not visible
+        itemText[itemID].style.display = "block";
+        itemArrow[itemID].style.transform = "rotate(540deg)";
+        itemTitle[itemID].style.fontWeight = "700";
+      }
+      else
+      { // if visible
+        itemText[itemID].style.display = "none";
+        itemArrow[itemID].style.transform = "rotate(0)";
+        itemTitle[itemID].style.fontWeight = "400";
+      }
+    }
+  </script>
+</body>
+</html>
